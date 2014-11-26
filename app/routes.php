@@ -12,10 +12,26 @@ Route::group(array('before' => 'auth'), function() {
         'uses' => 'AccountController@getSignOut'
     ));
 });
+
+
 /**
  * This is Home Controller
  */
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
+
+
+
+/**
+ * This is Check Server Connection 
+ */
+Route::get('/mobile/check-server/{Server_Name}', array('as' => 'check-server', 'uses' => 'AndroidServiceController@checkServerConnection'));
+
+
+/**
+ * This is Check Server Connection 
+ */
+Route::get('/mobile/techer_auth/{username}/{password}', array('as' => 'check-server', 'uses' => 'AndroidServiceController@checkTeachAuth'));
+
 /**
  * This is blank Page
  */
